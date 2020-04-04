@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { UserContextProvider } from './context/contexts/UserContext';
+import { UserContextProvider } from './context/Contexts/UserContext';
 
 ReactDOM.render(
     <UserContextProvider>

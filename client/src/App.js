@@ -11,6 +11,7 @@ const App = () => {
         <div>
             <Router>
                 <Nav />
+
                 <Switch>
                     <Route exact path='/' component={SignIn} />
                     <Route exact path='/register' component={Register} />
