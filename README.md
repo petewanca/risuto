@@ -39,8 +39,18 @@
     <li>petewanca@gmail.com</li>
 </ul>
 
-<h2>👩🏽‍💻 Further Development</h2>
-<p>TBD</p>
+<h2>👩🏽‍💻 Development Track</h2>
+<p>To Do:</p>
+<ul>
+    <li>Anime api</li>
+    <li>DB architecture</li>
+    <li>Client design</li>
+    <li>Putting it all together</li>
+</ul>
+<p>Completed(ish):</p>
+<ul>
+    <li>Authentication</li>
+</ul>
 
 <h2>📸 Screenshots</h2>
 <p>TBD</p>

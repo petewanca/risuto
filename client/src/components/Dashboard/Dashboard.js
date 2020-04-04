@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../context/Contexts/UserContext';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 export const Dashboard = () => {
     const { user, dispatch } = useContext(UserContext);
@@ -11,11 +12,23 @@ export const Dashboard = () => {
         dispatch({ type: 'LOGOUT' });
     };
 
+    const getAnime = async () => {
+        axios({
+            method: 'GET',
+            url: `https://kitsu.io/api/edge/anime?filter[text]=cowboy`,
+        })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+    };
+
     auth ? (content = 'dashboard') : (content = <Redirect to='/' />);
 
     return (
         <div>
             {content}
+            <br />
+            <button onClick={getAnime}>get anime</button>
+            <br />
             <button onClick={handleLogout}>logout</button>
         </div>
     );

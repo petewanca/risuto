@@ -6,7 +6,7 @@ module.exports = (app) => {
 
     app.post('/api/user/login', LoginController);
 
-    app.use('/api/user/auth', passport.authenticate('jwt', { session: false }), (req, res) => {
+    app.get('/api/user/auth', passport.authenticate('jwt', { session: false }), (req, res) => {
         res.status(200).send('Authorized.');
     });
 
