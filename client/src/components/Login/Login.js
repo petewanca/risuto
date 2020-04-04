@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/Contexts/UserContext';
-import { SendLogin } from './action';
+import { SendLogin } from './Action';
 
 export const Login = () => {
     const { user, dispatch } = useContext(UserContext);
@@ -11,7 +11,7 @@ export const Login = () => {
     const message = user.message;
     let content;
 
-    const handleLogin = async (e) => {
+    const handleForm = async (e) => {
         e.preventDefault();
 
         try {
@@ -19,13 +19,14 @@ export const Login = () => {
             dispatch({ type: 'LOGIN_SUCCESS', payload: { token: response.data.token } });
         } catch (error) {
             dispatch({ type: 'LOGIN_FAILURE', payload: { error: error.response.data } });
+            setPassword('');
         }
     };
 
     auth
         ? (content = <Redirect to='/dashboard' />)
         : (content = (
-              <form onSubmit={handleLogin}>
+              <form onSubmit={handleForm}>
                   <h3>{message}</h3>
                   <input
                       type='text'
