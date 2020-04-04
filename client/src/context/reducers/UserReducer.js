@@ -1,15 +1,15 @@
 export const UserReducer = (state, action) => {
     switch (action.type) {
-        case 'SIGNUP_SUCCESS':
+        case 'REGISTER_SUCCESS':
             return state;
 
-        case 'SIGNUP_FAILURE':
+        case 'REGISTER_FAILURE':
             return state;
 
-        case 'SIGNIN_SUCCESS':
+        case 'LOGIN_SUCCESS':
             return state;
 
-        case 'SIGNIN_FAILURE':
+        case 'LOGIN_FAILURE':
             return state;
 
         case 'SIGNOUT':

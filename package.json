@@ -6,7 +6,7 @@
     "scripts": {
         "server": "nodemon server.js",
         "client": "npm start --prefix client",
-        "app": "concurrently \"npm run dev\" \"npm run client\""
+        "app": "concurrently \"npm run server\" \"npm run client\""
     },
     "repository": {
         "type": "git",
