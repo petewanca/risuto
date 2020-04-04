@@ -3,29 +3,30 @@ import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/Contexts/UserContext';
 import { SendLogin } from './action';
 
-export const SignIn = () => {
-    const { user } = useContext(UserContext);
-    const [email, setEmail] = useState('pete@pete.com');
-    const [password, setPassword] = useState('password');
+export const Login = () => {
+    const { user, dispatch } = useContext(UserContext);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const auth = user.loggedIn;
+    const message = user.message;
+    let content;
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
             const response = await SendLogin(email, password);
-            console.log(response);
+            dispatch({ type: 'LOGIN_SUCCESS', payload: { token: response.data.token } });
         } catch (error) {
-            console.log(error.response);
+            dispatch({ type: 'LOGIN_FAILURE', payload: { error: error.response.data } });
         }
     };
-
-    const auth = user.loggedIn;
-    let content;
 
     auth
         ? (content = <Redirect to='/dashboard' />)
         : (content = (
               <form onSubmit={handleLogin}>
+                  <h3>{message}</h3>
                   <input
                       type='text'
                       placeholder='email'

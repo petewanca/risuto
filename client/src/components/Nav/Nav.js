@@ -5,7 +5,7 @@ export const Nav = () => {
     return (
         <ul>
             <li>
-                <Link to='/'>Sign In</Link>
+                <Link to='/'>Login</Link>
             </li>
             <li>
                 <Link to='/register'>Register</Link>
