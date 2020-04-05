@@ -12,6 +12,7 @@ export const Dashboard = () => {
         dispatch({ type: 'LOGOUT' });
     };
 
+    // https://kitsu.docs.apiary.io/
     const getAnime = async () => {
         axios({
             method: 'GET',
