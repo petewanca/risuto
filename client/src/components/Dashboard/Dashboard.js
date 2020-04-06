@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { UserContext } from '../../context/Contexts/UserContext';
 import { Redirect } from 'react-router-dom';
-import axios from 'axios';
+import { AnimeSearchForm } from '../Forms/AnimeSearchForm';
+import { SearchResults } from '../Results/SearchResults';
 
 export const Dashboard = () => {
     const { user, dispatch } = useContext(UserContext);
@@ -12,14 +14,14 @@ export const Dashboard = () => {
         dispatch({ type: 'LOGOUT' });
     };
 
-    // https://kitsu.docs.apiary.io/
-    const getAnime = async () => {
+    const handleValidate = () => {
         axios({
             method: 'GET',
-            url: `https://kitsu.io/api/edge/anime?filter[text]=cowboy`,
+            url: '/api/user/auth',
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         })
             .then((res) => console.log(res))
-            .catch((err) => console.log(err));
+            .catch((err) => dispatch({ type: 'LOGOUT' }));
     };
 
     auth ? (content = 'dashboard') : (content = <Redirect to='/' />);
@@ -27,10 +29,10 @@ export const Dashboard = () => {
     return (
         <div>
             {content}
-            <br />
-            <button onClick={getAnime}>get anime</button>
-            <br />
             <button onClick={handleLogout}>logout</button>
+            <button onClick={handleValidate}>validate session</button>
+            <AnimeSearchForm />
+            <SearchResults />
         </div>
     );
 };
