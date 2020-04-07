@@ -15,7 +15,6 @@ export const AnimeSearchForm = () => {
             console.log(response);
             setResults(response.data.data);
             setPages(response.data.links);
-            setWords(words.trim());
         } catch (error) {
             console.log(error.response);
         }
