@@ -8,27 +8,11 @@
 <p>That's where Risuto comes in - currently in development. V1 to release in May 2020.</p>
 
 <h2>💻 Technology</h2>
-<p>Front End</p>
 <ul>
     <li>React w/ Context & Hooks</li>
-    <li>Styled Components</li>
-</ul>
-<p>Back End</p>
-<ul>
     <li>Node</li>
     <li>Express</li>
-    <li>Mongo during development</li>
-    <li>SQL in production (potentially)</li>
-</ul>
-<p>Core NPM Packages</p>
-<ul>
-    <li>Axios</li>
-    <li>Mongoose</li>
-    <li>Passport</li>
-    <li>Passport-JWT</li>
-    <li>JsonWebToken</li>
-    <li>Bcrypt JS</li>
-    <li>@hapi/joi</li>
+    <li>Mongo</li>
 </ul>
 
 <h2>👷‍♂️ Contributor(s)</h2>
@@ -38,19 +22,3 @@
     <li><a href='https://www.linkedin.com/in/petewanca' target='_blank'>LinkedIn</a></li>
     <li>petewanca@gmail.com</li>
 </ul>
-
-<h2>👩🏽‍💻 Development Track</h2>
-<p>To Do:</p>
-<ul>
-    <li>Anime api</li>
-    <li>DB architecture</li>
-    <li>Client design</li>
-    <li>Putting it all together</li>
-</ul>
-<p>Completed(ish):</p>
-<ul>
-    <li>Authentication</li>
-</ul>
-
-<h2>📸 Screenshots</h2>
-<p>TBD</p>
