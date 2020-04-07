@@ -35,9 +35,9 @@ export const RegisterComp = () => {
     };
 
     if (auth) {
-        content = <Redirect to='/dashboard' />;
+        content = <Redirect to='/profile' />;
     } else if (registered) {
-        content = <Redirect to='/' />;
+        content = <Redirect to='/login' />;
     } else {
         content = (
             <form onSubmit={handleForm}>

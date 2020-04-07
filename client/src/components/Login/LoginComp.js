@@ -24,7 +24,7 @@ export const LoginComp = () => {
     };
 
     auth
-        ? (content = <Redirect to='/dashboard' />)
+        ? (content = <Redirect to='/profile' />)
         : (content = (
               <form onSubmit={handleForm}>
                   <h3>{message}</h3>
