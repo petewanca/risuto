@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { UserContextProvider } from './context/Contexts/UserContext';
+import { SearchContextProvider } from './context/Contexts/SearchContext';
 
 ReactDOM.render(
     <UserContextProvider>
-        <App />
+        <SearchContextProvider>
+            <App />
+        </SearchContextProvider>
     </UserContextProvider>,
     document.getElementById('root')
 );

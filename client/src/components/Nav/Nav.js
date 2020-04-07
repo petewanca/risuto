@@ -3,52 +3,56 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/Contexts/UserContext';
 
 export const Nav = () => {
-    const { user } = useContext(UserContext);
+    const { user, dispatch } = useContext(UserContext);
     const auth = user.loggedIn;
     let content;
+
+    const handleLogout = () => {
+        dispatch({ type: 'LOGOUT' });
+    };
 
     auth
         ? (content = (
               <ul>
                   <li>
-                      <Link to='/'>Logo</Link>
+                      <Link to='/'>Home Page (app logo)</Link>
                   </li>
                   <li>
-                      <Link to='/'>Profile</Link>
+                      <Link to='/profile'>Profile</Link>
                   </li>
                   <li>
-                      <Link to='/'>My Lists</Link>
+                      <Link to='/my-lists'>My Lists</Link>
                   </li>
                   <li>
-                      <Link to='/'>Forum</Link>
+                      <Link to='/forum'>Forum</Link>
                   </li>
                   <li>
-                      <Link to='/'>Contact</Link>
+                      <Link to='/contact'>Contact</Link>
                   </li>
                   <li>
-                      <Link to='/'>About</Link>
+                      <Link to='/about'>About</Link>
                   </li>
                   <li>
-                      <Link to='/logout'>Logout</Link>
+                      <button onClick={handleLogout}>Logout</button>
                   </li>
               </ul>
           ))
         : (content = (
               <ul>
                   <li>
-                      <Link to='/'>Logo</Link>
+                      <Link to='/'>Home Page (app logo)</Link>
                   </li>
                   <li>
-                      <Link to='/'>Forum</Link>
+                      <Link to='/forum'>Forum</Link>
                   </li>
                   <li>
-                      <Link to='/'>Contact</Link>
+                      <Link to='/contact'>Contact</Link>
                   </li>
                   <li>
-                      <Link to='/login'>About</Link>
+                      <Link to='/about'>About</Link>
                   </li>
                   <li>
-                      <Link to='/'>Login</Link>
+                      <Link to='/login'>Login</Link>
                   </li>
                   <li>
                       <Link to='/register'>Register</Link>

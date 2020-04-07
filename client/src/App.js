@@ -1,11 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { NoMatch } from './components/NoMatch/NoMatch';
-import { Dashboard } from './components/Dashboard/Dashboard';
-import { Login } from './components/Login/Login';
-import { Register } from './components/Register/Register';
 import { Nav } from './components/Nav/Nav';
-import { SearchContextProvider } from './context/Contexts/SearchContext';
+import { Home } from './components/Pages/Home';
+import { Forum } from './components/Pages/Forum';
+import { Contact } from './components/Pages/Contact';
+import { About } from './components/Pages/About';
+import { Login } from './components/Pages/Login';
+import { Register } from './components/Pages/Register';
+import { Results } from './components/Pages/Results';
+import { NoMatch } from './components/Pages/NoMatch';
 
 const App = () => {
     return (
@@ -14,11 +17,13 @@ const App = () => {
                 <Nav />
 
                 <Switch>
-                    <Route exact path='/' component={Login} />
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/forum' component={Forum} />
+                    <Route exact path='/contact' component={Contact} />
+                    <Route exact path='/about' component={About} />
+                    <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
-                    <SearchContextProvider>
-                        <Route exact path='/dashboard' component={Dashboard} />
-                    </SearchContextProvider>
+                    <Route exact path='/results' component={Results} />
                     <Route exact component={NoMatch} />
                 </Switch>
             </Router>

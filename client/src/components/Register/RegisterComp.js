@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/Contexts/UserContext';
 import { SendRegister } from './Action';
 
-export const Register = () => {
+export const RegisterComp = () => {
     const { user, dispatch } = useContext(UserContext);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');

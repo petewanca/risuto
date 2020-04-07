@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/Contexts/UserContext';
 import { SendLogin } from './Action';
 
-export const Login = () => {
+export const LoginComp = () => {
     const { user, dispatch } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
