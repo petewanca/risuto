@@ -12,7 +12,6 @@ export const SearchForm = () => {
 
         try {
             const response = await searchByTitle(words);
-            console.log(response);
             setResults(response.data.data);
             setPages(response.data.links);
         } catch (error) {
