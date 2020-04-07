@@ -12,7 +12,7 @@
     <li>React w/ Context & Hooks</li>
     <li>Node</li>
     <li>Express</li>
-    <li>Mongo</li>
+    <li>MongoDB</li>
 </ul>
 
 <h2>👷‍♂️ Contributor(s)</h2>

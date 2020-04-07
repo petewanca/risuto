@@ -13,58 +13,137 @@ export const Nav = () => {
 
     auth
         ? (content = (
-              <ul>
-                  <li>
-                      <Link to='/'>Home Page (app logo)</Link>
-                  </li>
-                  <li>
-                      <Link to='/search'>Search</Link>
-                  </li>
-                  <li>
-                      <Link to='/profile'>Profile</Link>
-                  </li>
-                  <li>
-                      <Link to='/my-lists'>My Lists</Link>
-                  </li>
-                  <li>
-                      <Link to='/forum'>Forum</Link>
-                  </li>
-                  <li>
-                      <Link to='/contact'>Contact</Link>
-                  </li>
-                  <li>
-                      <Link to='/about'>About</Link>
-                  </li>
-                  <li>
-                      <button onClick={handleLogout}>Logout</button>
-                  </li>
-              </ul>
+              <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+                  <a className='navbar-brand' href='/'>
+                      | r i s u t o |
+                  </a>
+                  <button
+                      className='navbar-toggler'
+                      type='button'
+                      data-toggle='collapse'
+                      data-target='#navbarColor01'
+                      aria-controls='navbarColor01'
+                      aria-expanded='false'
+                      aria-label='Toggle navigation'
+                  >
+                      <span className='navbar-toggler-icon'></span>
+                  </button>
+
+                  <div className='collapse navbar-collapse' id='navbarColor01'>
+                      <ul className='navbar-nav mr-auto'>
+                          <li className='nav-item active'>
+                              <a className='nav-link' href='/search'>
+                                  Search
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/profile'>
+                                  Profile
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/my-lists'>
+                                  My Lists
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/forum'>
+                                  Forum
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/contact'>
+                                  Contact
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/about'>
+                                  About
+                              </a>
+                          </li>
+                      </ul>
+                      <ul className='navbar-nav'>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/register'>
+                                  <button
+                                      className='btn btn-secondary my-2 my-sm-0 btn-warning'
+                                      type='submit'
+                                      onClick={handleLogout}
+                                  >
+                                      Logout
+                                  </button>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
           ))
         : (content = (
-              <ul>
-                  <li>
-                      <Link to='/'>Home Page (app logo)</Link>
-                  </li>
-                  <li>
-                      <Link to='/search'>Search</Link>
-                  </li>
-                  <li>
-                      <Link to='/forum'>Forum</Link>
-                  </li>
-                  <li>
-                      <Link to='/contact'>Contact</Link>
-                  </li>
-                  <li>
-                      <Link to='/about'>About</Link>
-                  </li>
-                  <li>
-                      <Link to='/login'>Login</Link>
-                  </li>
-                  <li>
-                      <Link to='/register'>Register</Link>
-                  </li>
-              </ul>
+              <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+                  <a className='navbar-brand' href='/'>
+                      | r i s u t o |
+                  </a>
+                  <button
+                      className='navbar-toggler'
+                      type='button'
+                      data-toggle='collapse'
+                      data-target='#navbarColor01'
+                      aria-controls='navbarColor01'
+                      aria-expanded='false'
+                      aria-label='Toggle navigation'
+                  >
+                      <span className='navbar-toggler-icon'></span>
+                  </button>
+
+                  <div className='collapse navbar-collapse' id='navbarColor01'>
+                      <ul className='navbar-nav mr-auto'>
+                          <li className='nav-item active'>
+                              <a className='nav-link' href='/search'>
+                                  Search
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/forum'>
+                                  Forum
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/contact'>
+                                  Contact
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/about'>
+                                  About
+                              </a>
+                          </li>
+                      </ul>
+                      <ul className='navbar-nav'>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/login'>
+                                  <button
+                                      className='btn btn-secondary mr-3 my-2 my-sm-0 btn-warning'
+                                      type='submit'
+                                  >
+                                      Login
+                                  </button>
+                              </a>
+                          </li>
+                          <li className='nav-item'>
+                              <a className='nav-link' href='/register'>
+                                  <button
+                                      className='btn btn-secondary my-2 my-sm-0 btn-success'
+                                      type='submit'
+                                      href='/register'
+                                  >
+                                      Register
+                                  </button>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
           ));
 
-    return <div>{content}</div>;
+    return <div className='mb-4'>{content}</div>;
 };
