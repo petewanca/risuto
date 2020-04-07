@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { searchByTitle } from './Action';
+import { SearchContext } from '../../context/Contexts/SearchContext';
 
 export const AnimeSearchForm = () => {
+    const { setResults } = useContext(SearchContext);
+    const { setPages } = useContext(SearchContext);
     const [words, setWords] = useState('');
 
     const search = async (e) => {
@@ -10,6 +13,8 @@ export const AnimeSearchForm = () => {
         try {
             const response = await searchByTitle(words);
             console.log(response);
+            setResults(response.data.data);
+            setPages(response.data.links);
             setWords(words.trim());
         } catch (error) {
             console.log(error.response);

@@ -5,6 +5,7 @@ import { Dashboard } from './components/Dashboard/Dashboard';
 import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
 import { Nav } from './components/Nav/Nav';
+import { SearchContextProvider } from './context/Contexts/SearchContext';
 
 const App = () => {
     return (
@@ -15,7 +16,9 @@ const App = () => {
                 <Switch>
                     <Route exact path='/' component={Login} />
                     <Route exact path='/register' component={Register} />
-                    <Route exact path='/dashboard' component={Dashboard} />
+                    <SearchContextProvider>
+                        <Route exact path='/dashboard' component={Dashboard} />
+                    </SearchContextProvider>
                     <Route exact component={NoMatch} />
                 </Switch>
             </Router>
