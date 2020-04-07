@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { searchByTitle } from './Action';
 import { SearchContext } from '../../context/Contexts/SearchContext';
 
-export const AnimeSearchForm = () => {
+export const SearchForm = () => {
     const { setResults } = useContext(SearchContext);
     const { setPages } = useContext(SearchContext);
     const [words, setWords] = useState('');
@@ -22,7 +22,7 @@ export const AnimeSearchForm = () => {
 
     return (
         <div>
-            <h3>Search Form</h3>
+            <h5>Search Form</h5>
             <form onSubmit={search}>
                 <input
                     placeholder='title'

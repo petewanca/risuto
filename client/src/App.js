@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Nav } from './components/Nav/Nav';
 import { Home } from './components/Pages/Home';
+import { Search } from './components/Pages/Search';
 import { Forum } from './components/Pages/Forum';
 import { Contact } from './components/Pages/Contact';
 import { About } from './components/Pages/About';
@@ -20,6 +21,7 @@ const App = () => {
 
                 <Switch>
                     <Route exact path='/' component={Home} />
+                    <Route exact path='/search' component={Search} />
                     <Route exact path='/forum' component={Forum} />
                     <Route exact path='/contact' component={Contact} />
                     <Route exact path='/about' component={About} />

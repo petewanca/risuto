@@ -18,6 +18,9 @@ export const Nav = () => {
                       <Link to='/'>Home Page (app logo)</Link>
                   </li>
                   <li>
+                      <Link to='/search'>Search</Link>
+                  </li>
+                  <li>
                       <Link to='/profile'>Profile</Link>
                   </li>
                   <li>
@@ -41,6 +44,9 @@ export const Nav = () => {
               <ul>
                   <li>
                       <Link to='/'>Home Page (app logo)</Link>
+                  </li>
+                  <li>
+                      <Link to='/search'>Search</Link>
                   </li>
                   <li>
                       <Link to='/forum'>Forum</Link>
