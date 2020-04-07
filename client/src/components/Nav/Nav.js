@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/Contexts/UserContext';
 
 export const Nav = () => {
@@ -13,9 +12,9 @@ export const Nav = () => {
 
     auth
         ? (content = (
-              <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+              <div className='navbar navbar-expand-lg navbar-dark bg-primary'>
                   <a className='navbar-brand' href='/'>
-                      | r i s u t o |
+                      r i s u t o
                   </a>
                   <button
                       className='navbar-toggler'
@@ -66,7 +65,7 @@ export const Nav = () => {
                           <li className='nav-item'>
                               <a className='nav-link' href='/register'>
                                   <button
-                                      className='btn btn-secondary my-2 my-sm-0 btn-warning'
+                                      className='btn btn-secondary my-2 my-sm-0 btn-secondary'
                                       type='submit'
                                       onClick={handleLogout}
                                   >
@@ -76,12 +75,12 @@ export const Nav = () => {
                           </li>
                       </ul>
                   </div>
-              </nav>
+              </div>
           ))
         : (content = (
-              <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+              <div className='navbar navbar-expand-lg navbar-dark bg-primary'>
                   <a className='navbar-brand' href='/'>
-                      | r i s u t o |
+                      r i s u t o
                   </a>
                   <button
                       className='navbar-toggler'
@@ -142,8 +141,8 @@ export const Nav = () => {
                           </li>
                       </ul>
                   </div>
-              </nav>
+              </div>
           ));
 
-    return <div className='mb-4'>{content}</div>;
+    return <nav className='mb-4'>{content}</nav>;
 };

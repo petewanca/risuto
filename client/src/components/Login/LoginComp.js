@@ -23,26 +23,45 @@ export const LoginComp = () => {
         }
     };
 
+    //     <small id='emailHelp' className='form-text text-muted'>
+    //     We'll never share your email with anyone without asking.
+    // </small>
+
     auth
         ? (content = <Redirect to='/profile' />)
         : (content = (
-              <form onSubmit={handleForm}>
-                  <h3>{message}</h3>
-                  <input
-                      type='text'
-                      placeholder='email'
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <br />
-                  <input
-                      type='password'
-                      placeholder='password'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <br />
-                  <input type='submit' value='sign in' />
+              <form onSubmit={handleForm} className='col-lg-6'>
+                  <fieldset>
+                      <legend>Login</legend>
+                      <div className='form-group'>
+                          <label htmlFor='exampleInputEmail1'>Email address</label>
+                          <input
+                              type='email'
+                              className='form-control'
+                              id='exampleInputEmail1'
+                              aria-describedby='emailHelp'
+                              placeholder='Enter email'
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                          />
+                          <small className='text-danger'>{message}</small>
+                      </div>
+                      <div className='form-group'>
+                          <label htmlFor='exampleInputPassword1'>Password</label>
+                          <input
+                              type='password'
+                              className='form-control'
+                              id='exampleInputPassword1'
+                              placeholder='Password'
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                          />
+                      </div>
+
+                      <button type='submit' className='btn btn-primary'>
+                          Submit
+                      </button>
+                  </fieldset>
               </form>
           ));
 
