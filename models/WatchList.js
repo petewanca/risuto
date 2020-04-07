@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const planToWatchSchema = new mongoose.Schema({
+    itemId: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
