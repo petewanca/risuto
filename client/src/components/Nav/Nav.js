@@ -65,7 +65,7 @@ export const Nav = () => {
                           <li className='nav-item'>
                               <a className='nav-link' href='/register'>
                                   <button
-                                      className='btn btn-secondary my-2 my-sm-0 btn-secondary'
+                                      className='btn btn-outline-secondary my-2 my-sm-0'
                                       type='submit'
                                       onClick={handleLogout}
                                   >
@@ -121,7 +121,7 @@ export const Nav = () => {
                           <li className='nav-item'>
                               <a className='nav-link' href='/login'>
                                   <button
-                                      className='btn btn-secondary mr-3 my-2 my-sm-0 btn-warning'
+                                      className='btn btn-outline-warning mr-3 my-2 my-sm-0'
                                       type='submit'
                                   >
                                       Login
@@ -131,7 +131,7 @@ export const Nav = () => {
                           <li className='nav-item'>
                               <a className='nav-link' href='/register'>
                                   <button
-                                      className='btn btn-secondary my-2 my-sm-0 btn-success'
+                                      className='btn btn-outline-success my-2 my-sm-0'
                                       type='submit'
                                       href='/register'
                                   >

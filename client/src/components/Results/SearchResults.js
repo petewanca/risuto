@@ -7,15 +7,29 @@ export const SearchResults = () => {
 
     results.length
         ? (content = results.map((item) => (
-              <div
-                  className='card bg-light m-4 col-lg-3'
-                  style={{ maxWidth: '20rem' }}
-                  key={item.id}
-              >
-                  <div className='card-header'>{item.attributes.canonicalTitle}</div>
+              //   <div
+              //       className='card bg-light m-4 col-lg-3'
+              //       style={{ maxWidth: '20rem' }}
+              //       key={item.id}
+              //   >
+              //       <div className='card-header'>{item.attributes.canonicalTitle}</div>
+              //       <div className='card-body'>
+              //           <h4 className='card-title'>Light card title</h4>
+              //           <p className='card-text'>{`${item.attributes.synopsis.slice(0, 110)}...`}</p>
+              //       </div>
+              //   </div>
+
+              <div className='card' style={{ width: '18rem' }} key={item.id}>
+                  <img className='card-img-top' src={item.attributes.coverImage} alt='anime img' />
                   <div className='card-body'>
-                      <h4 className='card-title'>Light card title</h4>
-                      <p className='card-text'>{`${item.attributes.synopsis.slice(0, 110)}...`}</p>
+                      <h5 className='card-title'>Card title</h5>
+                      <p className='card-text'>
+                          Some quick example text to build on the card title and make up the bulk of
+                          the card's content.
+                      </p>
+                      <a href='#' className='btn btn-primary'>
+                          Go somewhere
+                      </a>
                   </div>
               </div>
           )))
@@ -25,10 +39,6 @@ export const SearchResults = () => {
 };
 
 /*
-createdAt: "2013-02-20T17:09:35.557Z"
-updatedAt: "2020-04-07T18:00:27.185Z"
-slug: "baka-to-test-to-shoukanjuu"
-synopsis: description
 coverImageTopOffset: 92
 titles: {en: "Baka & Test - Summon the Beasts", en_jp: "Bak…}
 canonicalTitle: "Baka to Test to Shoukanjuu"
