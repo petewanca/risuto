@@ -13,7 +13,7 @@ export const Nav = () => {
     auth
         ? (content = (
               <div className='navbar navbar-expand-lg navbar-dark bg-primary'>
-                  <a className='navbar-brand' href='/'>
+                  <a className='navbar-brand border border-success rounded-pill p-3' href='/'>
                       r i s u t o
                   </a>
                   <button
@@ -79,7 +79,7 @@ export const Nav = () => {
           ))
         : (content = (
               <div className='navbar navbar-expand-lg navbar-dark bg-primary'>
-                  <a className='navbar-brand' href='/'>
+                  <a className='navbar-brand border border-success rounded-pill p-3' href='/'>
                       r i s u t o
                   </a>
                   <button
