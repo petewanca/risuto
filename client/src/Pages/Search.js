@@ -1,6 +1,6 @@
 import React from 'react';
-import { SearchForm } from '../SearchForm/SearchForm';
-import { SearchResults } from '../Results/SearchResults';
+import { SearchForm } from '../components/SearchForm/SearchForm';
+import { SearchResults } from '../components/Results/SearchResults';
 
 export const Search = () => {
     return (

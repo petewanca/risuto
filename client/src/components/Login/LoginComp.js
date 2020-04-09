@@ -23,10 +23,6 @@ export const LoginComp = () => {
         }
     };
 
-    //     <small id='emailHelp' className='form-text text-muted'>
-    //     We'll never share your email with anyone without asking.
-    // </small>
-
     auth
         ? (content = <Redirect to='/profile' />)
         : (content = (
@@ -44,7 +40,6 @@ export const LoginComp = () => {
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                           />
-                          <small className='text-danger'>{message}</small>
                       </div>
                       <div className='form-group'>
                           <label htmlFor='exampleInputPassword1'>Password</label>
@@ -61,6 +56,9 @@ export const LoginComp = () => {
                       <button type='submit' className='btn btn-primary'>
                           Submit
                       </button>
+                      <div className='mt-3'>
+                          <small className='text-danger'>{message}</small>
+                      </div>
                   </fieldset>
               </form>
           ));

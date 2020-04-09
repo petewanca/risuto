@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../../context/Contexts/UserContext';
+import { UserContext } from '../context/Contexts/UserContext';
 import { Redirect } from 'react-router-dom';
 
 export const MyLists = () => {

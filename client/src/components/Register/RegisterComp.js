@@ -40,44 +40,70 @@ export const RegisterComp = () => {
         content = <Redirect to='/login' />;
     } else {
         content = (
-            <form onSubmit={handleForm}>
-                <h3>{message}</h3>
-                <input
-                    type='text'
-                    placeholder='first'
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-                <br />
-                <input
-                    type='text'
-                    placeholder='last'
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-                <br />
-                <input
-                    type='text'
-                    placeholder='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <br />
-                <input
-                    type='password'
-                    placeholder='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <br />
-                <input
-                    type='password'
-                    placeholder='again'
-                    value={match}
-                    onChange={(e) => setMatch(e.target.value)}
-                />
-                <br />
-                <input type='submit' value='sign in' />
+            <form onSubmit={handleForm} className='col-lg-6'>
+                <fieldset>
+                    <legend>Register</legend>
+                    <div className='form-group'>
+                        <label htmlFor='exampleInputEmail1'>Email address</label>
+                        <input
+                            type='text'
+                            className='form-control'
+                            placeholder='First Name'
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='exampleInputEmail1'>Email address</label>
+                        <input
+                            type='text'
+                            className='form-control'
+                            placeholder='Last Name'
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Email address</label>
+                        <input
+                            type='email'
+                            className='form-control'
+                            placeholder='Enter email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <small id='emailHelp' className='form-text text-muted'>
+                            We'll never share your email with anyone without asking.
+                        </small>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='exampleInputPassword1'>Password</label>
+                        <input
+                            type='password'
+                            className='form-control'
+                            placeholder='Password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='exampleInputPassword1'>Enter Password Again</label>
+                        <input
+                            type='password'
+                            className='form-control'
+                            placeholder='Password'
+                            value={match}
+                            onChange={(e) => setMatch(e.target.value)}
+                        />
+                    </div>
+
+                    <button type='submit' className='btn btn-primary'>
+                        Submit
+                    </button>
+                    <div className='mt-3'>
+                        <small className='text-danger'>{message}</small>
+                    </div>
+                </fieldset>
             </form>
         );
     }
