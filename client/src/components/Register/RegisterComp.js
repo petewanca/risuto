@@ -40,71 +40,73 @@ export const RegisterComp = () => {
         content = <Redirect to='/login' />;
     } else {
         content = (
-            <form onSubmit={handleForm} className='col-lg-6'>
-                <fieldset>
-                    <legend className='mb-4'>Register</legend>
-                    <div className='form-group'>
-                        <label>First Name</label>
-                        <input
-                            type='text'
-                            className='form-control shadow'
-                            placeholder='First Name'
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
-                        />
-                    </div>
-                    <div className='form-group'>
-                        <label>Last Name</label>
-                        <input
-                            type='text'
-                            className='form-control shadow'
-                            placeholder='Last Name'
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
-                        />
-                    </div>
-                    <div className='form-group'>
-                        <label>Email address</label>
-                        <input
-                            type='email'
-                            className='form-control shadow'
-                            placeholder='Enter email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <small id='emailHelp' className='form-text text-muted'>
-                            We'll never share your email with anyone without asking.
-                        </small>
-                    </div>
-                    <div className='form-group'>
-                        <label>Password</label>
-                        <input
-                            type='password'
-                            className='form-control shadow'
-                            placeholder='Password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className='form-group'>
-                        <label>Enter Password Again</label>
-                        <input
-                            type='password'
-                            className='form-control shadow'
-                            placeholder='Password'
-                            value={match}
-                            onChange={(e) => setMatch(e.target.value)}
-                        />
-                    </div>
+            <div className='row justify-content-center'>
+                <form onSubmit={handleForm} className='col-lg-6'>
+                    <fieldset>
+                        <legend className='mb-4'>Register</legend>
+                        <div className='form-group'>
+                            <label>First Name</label>
+                            <input
+                                type='text'
+                                className='form-control shadow'
+                                placeholder='First Name'
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <label>Last Name</label>
+                            <input
+                                type='text'
+                                className='form-control shadow'
+                                placeholder='Last Name'
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <label>Email address</label>
+                            <input
+                                type='email'
+                                className='form-control shadow'
+                                placeholder='Enter email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <small id='emailHelp' className='form-text text-muted'>
+                                We'll never share your email with anyone without asking.
+                            </small>
+                        </div>
+                        <div className='form-group'>
+                            <label>Password</label>
+                            <input
+                                type='password'
+                                className='form-control shadow'
+                                placeholder='Password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <label>Enter Password Again</label>
+                            <input
+                                type='password'
+                                className='form-control shadow'
+                                placeholder='Password'
+                                value={match}
+                                onChange={(e) => setMatch(e.target.value)}
+                            />
+                        </div>
 
-                    <button type='submit' className='btn btn-primary shadow'>
-                        Submit
-                    </button>
-                    <div className='mt-3'>
-                        <small className='text-danger'>{message}</small>
-                    </div>
-                </fieldset>
-            </form>
+                        <button type='submit' className='btn btn-primary shadow'>
+                            Submit
+                        </button>
+                        <div className='mt-3'>
+                            <small className='text-danger'>{message}</small>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         );
     }
 

@@ -26,38 +26,40 @@ export const LoginComp = () => {
     auth
         ? (content = <Redirect to='/profile' />)
         : (content = (
-              <form onSubmit={handleForm} className='col-lg-6'>
-                  <fieldset>
-                      <legend className='mb-4'>Login</legend>
-                      <div className='form-group'>
-                          <label>Email address</label>
-                          <input
-                              type='email'
-                              className='form-control shadow'
-                              placeholder='Enter email'
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                          />
-                      </div>
-                      <div className='form-group'>
-                          <label>Password</label>
-                          <input
-                              type='password'
-                              className='form-control shadow'
-                              placeholder='Password'
-                              value={password}
-                              onChange={(e) => setPassword(e.target.value)}
-                          />
-                      </div>
+              <div className='row justify-content-center'>
+                  <form onSubmit={handleForm} className='col-lg-6'>
+                      <fieldset>
+                          <legend className='mb-4'>Login</legend>
+                          <div className='form-group'>
+                              <label>Email address</label>
+                              <input
+                                  type='email'
+                                  className='form-control shadow'
+                                  placeholder='Enter email'
+                                  value={email}
+                                  onChange={(e) => setEmail(e.target.value)}
+                              />
+                          </div>
+                          <div className='form-group'>
+                              <label>Password</label>
+                              <input
+                                  type='password'
+                                  className='form-control shadow'
+                                  placeholder='Password'
+                                  value={password}
+                                  onChange={(e) => setPassword(e.target.value)}
+                              />
+                          </div>
 
-                      <button type='submit' className='btn btn-primary'>
-                          Submit
-                      </button>
-                      <div className='mt-3'>
-                          <small className='text-danger'>{message}</small>
-                      </div>
-                  </fieldset>
-              </form>
+                          <button type='submit' className='btn btn-primary'>
+                              Submit
+                          </button>
+                          <div className='mt-3'>
+                              <small className='text-danger'>{message}</small>
+                          </div>
+                      </fieldset>
+                  </form>
+              </div>
           ));
 
     return <div>{content}</div>;
