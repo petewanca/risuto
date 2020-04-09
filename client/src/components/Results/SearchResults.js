@@ -5,28 +5,25 @@ export const SearchResults = () => {
     const { results } = useContext(SearchContext);
     let content;
 
+    // card width option: style={{ width: '30%' }}
+
     results.length
         ? (content = results.map((item) => (
-              //   <div
-              //       className='card bg-light m-4 col-lg-3'
-              //       style={{ maxWidth: '20rem' }}
-              //       key={item.id}
-              //   >
-              //       <div className='card-header'>{item.attributes.canonicalTitle}</div>
-              //       <div className='card-body'>
-              //           <h4 className='card-title'>Light card title</h4>
-              //           <p className='card-text'>{`${item.attributes.synopsis.slice(0, 110)}...`}</p>
-              //       </div>
-              //   </div>
-
-              <div className='card' style={{ width: '18rem' }} key={item.id}>
-                  <img className='card-img-top' src={item.attributes.coverImage} alt='anime img' />
+              <div className='card col-lg-4 m-4 shadow bg-light' key={item.id}>
+                  <div className='p-3 text-center'>
+                      <img
+                          className='card-img-top rounded border border-secondary shadow'
+                          src={item.attributes.posterImage.large}
+                          style={{ width: '200px' }}
+                          alt='anime img'
+                      />
+                  </div>
                   <div className='card-body'>
-                      <h5 className='card-title'>Card title</h5>
-                      <p className='card-text'>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                      </p>
+                      <h5 className='card-title'>{item.attributes.canonicalTitle}</h5>
+                      <p className='card-text'>{`${item.attributes.synopsis.slice(
+                          0,
+                          100
+                      )} . . . `}</p>
                       <a href='/' className='btn btn-primary'>
                           Go somewhere
                       </a>
@@ -35,7 +32,7 @@ export const SearchResults = () => {
           )))
         : (content = null);
 
-    return <div className='row'>{content}</div>;
+    return <div className='row justify-content-center'>{content}</div>;
 };
 
 /*
