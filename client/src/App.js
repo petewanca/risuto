@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Nav } from './components/Nav/Nav';
-import { Home } from './Pages/Home';
-import { Search } from './Pages/Search';
-import { Forum } from './Pages/Forum';
-import { Contact } from './Pages/Contact';
-import { About } from './Pages/About';
-import { Login } from './Pages/Login';
-import { Register } from './Pages/Register';
-import { NoMatch } from './Pages/NoMatch';
-import { Profile } from './Pages/Profile';
-import { MyLists } from './Pages/MyLists';
+import { Home } from './pages/Home';
+import { Search } from './pages/Search';
+import { Forum } from './pages/Forum';
+import { Contact } from './pages/Contact';
+import { About } from './pages/About';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { NoMatch } from './pages/NoMatch';
+import { Profile } from './pages/Profile';
+import { MyLists } from './pages/MyLists';
 
 const App = () => {
     return (

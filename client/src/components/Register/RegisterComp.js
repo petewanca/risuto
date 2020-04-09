@@ -42,22 +42,22 @@ export const RegisterComp = () => {
         content = (
             <form onSubmit={handleForm} className='col-lg-6'>
                 <fieldset>
-                    <legend>Register</legend>
+                    <legend className='mb-4'>Register</legend>
                     <div className='form-group'>
-                        <label htmlFor='exampleInputEmail1'>Email address</label>
+                        <label>First Name</label>
                         <input
                             type='text'
-                            className='form-control'
+                            className='form-control shadow'
                             placeholder='First Name'
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                         />
                     </div>
                     <div className='form-group'>
-                        <label htmlFor='exampleInputEmail1'>Email address</label>
+                        <label>Last Name</label>
                         <input
                             type='text'
-                            className='form-control'
+                            className='form-control shadow'
                             placeholder='Last Name'
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
@@ -67,7 +67,7 @@ export const RegisterComp = () => {
                         <label>Email address</label>
                         <input
                             type='email'
-                            className='form-control'
+                            className='form-control shadow'
                             placeholder='Enter email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -77,27 +77,27 @@ export const RegisterComp = () => {
                         </small>
                     </div>
                     <div className='form-group'>
-                        <label htmlFor='exampleInputPassword1'>Password</label>
+                        <label>Password</label>
                         <input
                             type='password'
-                            className='form-control'
+                            className='form-control shadow'
                             placeholder='Password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <div className='form-group'>
-                        <label htmlFor='exampleInputPassword1'>Enter Password Again</label>
+                        <label>Enter Password Again</label>
                         <input
                             type='password'
-                            className='form-control'
+                            className='form-control shadow'
                             placeholder='Password'
                             value={match}
                             onChange={(e) => setMatch(e.target.value)}
                         />
                     </div>
 
-                    <button type='submit' className='btn btn-primary'>
+                    <button type='submit' className='btn btn-primary shadow'>
                         Submit
                     </button>
                     <div className='mt-3'>

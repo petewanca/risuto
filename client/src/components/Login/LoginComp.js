@@ -28,25 +28,22 @@ export const LoginComp = () => {
         : (content = (
               <form onSubmit={handleForm} className='col-lg-6'>
                   <fieldset>
-                      <legend>Login</legend>
+                      <legend className='mb-4'>Login</legend>
                       <div className='form-group'>
-                          <label htmlFor='exampleInputEmail1'>Email address</label>
+                          <label>Email address</label>
                           <input
                               type='email'
-                              className='form-control'
-                              id='exampleInputEmail1'
-                              aria-describedby='emailHelp'
+                              className='form-control shadow'
                               placeholder='Enter email'
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                           />
                       </div>
                       <div className='form-group'>
-                          <label htmlFor='exampleInputPassword1'>Password</label>
+                          <label>Password</label>
                           <input
                               type='password'
-                              className='form-control'
-                              id='exampleInputPassword1'
+                              className='form-control shadow'
                               placeholder='Password'
                               value={password}
                               onChange={(e) => setPassword(e.target.value)}
