@@ -1,38 +1,44 @@
 import React, { useContext } from 'react';
 import { SearchContext } from '../../context/Contexts/SearchContext';
+import { Pagination } from './Pagination';
 
 export const SearchResults = () => {
     const { results } = useContext(SearchContext);
     let content;
 
-    // card width option: style={{ width: '30%' }}
+    if (results) {
+        content = results.map((item) => (
+            <div className='card col-lg-4 m-4 shadow bg-light' key={item.id}>
+                <div className='p-3 text-center'>
+                    <img
+                        className='card-img-top rounded border border-secondary shadow'
+                        src={item.attributes.posterImage.large}
+                        style={{ width: '200px' }}
+                        alt='anime img'
+                    />
+                </div>
+                <div className='card-body'>
+                    <h5 className='card-title'>{item.attributes.canonicalTitle}</h5>
+                    <p className='card-text'>{`${item.attributes.synopsis.slice(
+                        0,
+                        100
+                    )} . . . `}</p>
+                    <a href='/' className='btn btn-primary'>
+                        Go somewhere
+                    </a>
+                </div>
+            </div>
+        ));
+    }
 
-    results.length
-        ? (content = results.map((item) => (
-              <div className='card col-lg-4 m-4 shadow bg-light' key={item.id}>
-                  <div className='p-3 text-center'>
-                      <img
-                          className='card-img-top rounded border border-secondary shadow'
-                          src={item.attributes.posterImage.large}
-                          style={{ width: '200px' }}
-                          alt='anime img'
-                      />
-                  </div>
-                  <div className='card-body'>
-                      <h5 className='card-title'>{item.attributes.canonicalTitle}</h5>
-                      <p className='card-text'>{`${item.attributes.synopsis.slice(
-                          0,
-                          100
-                      )} . . . `}</p>
-                      <a href='/' className='btn btn-primary'>
-                          Go somewhere
-                      </a>
-                  </div>
-              </div>
-          )))
-        : (content = null);
-
-    return <div className='row justify-content-center'>{content}</div>;
+    return (
+        <>
+            <div className='row justify-content-center'>
+                <>{content}</>
+            </div>
+            <Pagination />
+        </>
+    );
 };
 
 /*
