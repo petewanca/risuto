@@ -20,6 +20,12 @@ export const UserReducer = (state, action) => {
             localStorage.removeItem('token');
             return { loggedIn: false };
 
+        case 'VALIDATION_SUCCESS':
+            return { loggedIn: true };
+
+        case 'VALIDATION_FAILURE':
+            return { loggedIn: false, message: action.payload.error };
+
         default:
             return state;
     }
