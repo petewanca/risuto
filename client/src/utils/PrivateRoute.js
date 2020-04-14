@@ -5,23 +5,26 @@ import { Login } from '../pages/Login';
 import { UserContext } from '../context/Contexts/UserContext';
 
 export const PrivateRoute = ({ path, component }) => {
-    const { dispatch } = useContext(UserContext);
+    const { user, dispatch } = useContext(UserContext);
+    const auth = user.loggedIn;
 
     const sendValidation = async () => {
         try {
             await Validate();
             dispatch({ type: 'VALIDATION_SUCCESS' });
         } catch (error) {
-            dispatch({ type: 'VALIDATION_FAILURE', payload: { error: error.response.data } });
+            dispatch({
+                type: 'VALIDATION_FAILURE',
+                payload: { error: `Please sign in to visit the page '${path}'.` },
+            });
         }
     };
 
-    // let content;
-    // try {
-    //     handleValidate().then((content = <Route exact path={path} component={component} />));
-    // } catch (error) {
-    //     content = <Redirect to='/login' component={Login} />;
-    // }
     sendValidation();
-    return <Route exact path={path} component={component} />;
+
+    return auth ? (
+        <Route exact path={path} component={component} />
+    ) : (
+        <Redirect to='/login' component={Login} />
+    );
 };
