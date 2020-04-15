@@ -26,7 +26,7 @@ const App = () => {
                     <Route exact path='/about' component={About} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
-                    <Route exact path='/profile' component={Profile} />
+                    <PrivateRoute exact path='/profile' component={Profile} />
                     <PrivateRoute exact path='/my-lists' component={MyLists} />
                     <Route exact component={NoMatch} />
                 </Switch>
