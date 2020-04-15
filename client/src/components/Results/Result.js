@@ -1,38 +1,34 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export const Result = ({ data }) => {
     console.log(data);
     return (
-        // <div className='card col-lg-4 m-4 shadow bg-light'>
-        //     <div className='p-3 text-center'>
-        <div
-            className='m-2'
-            style={titleStyle}
-            className='card-img-top rounded border border-primary shadow-lg'
-        >
+        <Container className='m-2 rounded border border-primary shadow-lg'>
             <img
+                className='rounded-top img-fluid'
                 src={data.attributes.posterImage.large}
-                style={{ width: '200px' }}
-                alt='anime img'
+                // style={{ width: '200px' }}
+                alt='anime poster'
             />
-            <p>{data.attributes.canonicalTitle}</p>
-        </div>
-        /* </div>
-            <div className='card-body'>
-                <h5 className='card-title'>{data.attributes.canonicalTitle}</h5>
-                <p className='card-text'>{`${data.attributes.synopsis.slice(0, 100)} . . . `}</p>
-                <a href='/' className='btn btn-primary'>
-                    Go somewhere
-                </a>
-            </div>
-        </div> */
+            <Title className='bg-primary text-light font-weight-bold'>
+                {data.attributes.canonicalTitle}
+            </Title>
+        </Container>
     );
 };
 
-const titleStyle = {
-    // overflow: 'auto',
-    // whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    width: '200px',
-};
+const Title = styled.div`
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+`;
+
+const Container = styled.div`
+    cursor: pointer;
+    width: 200px;
+    &:hover {
+        opacity: 0.5;
+    }
+`;

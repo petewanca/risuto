@@ -13,7 +13,7 @@ export const SearchResults = () => {
 
     return (
         <>
-            <div className='row justify-content-center'>
+            <div className='row justify-content-center mt-4 pt-4 border-top border-light'>
                 <>{content}</>
             </div>
             <Pagination />
