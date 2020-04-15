@@ -8,12 +8,18 @@ export const Pagination = () => {
     if (pages) {
         content = (
             <div>
-                <button className='btn btn-primary'>test</button>
-                <button>test</button>
-                <button>test</button>
+                <button className='btn btn-outline-success mx-2 border font-weight-bold'>
+                    First Page
+                </button>
+                <button className='btn btn-outline-primary mx-2 border font-weight-bold'>
+                    Next Page
+                </button>
+                <button className='btn btn-outline-success mx-2 border font-weight-bold'>
+                    Last Page
+                </button>
             </div>
         );
     }
 
-    return <div className='row justify-content-center'>{content}</div>;
+    return <div className='row justify-content-center my-5'>{content}</div>;
 };

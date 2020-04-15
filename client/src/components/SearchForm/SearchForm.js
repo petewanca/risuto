@@ -5,6 +5,7 @@ import { SearchContext } from '../../context/Contexts/SearchContext';
 export const SearchForm = () => {
     const { setResults, setPages } = useContext(SearchContext);
     const [search, setSearch] = useState('');
+    const [limit, setLimit] = useState(10);
     const [message, setMessage] = useState('');
 
     const handleForm = async (e) => {
@@ -13,7 +14,7 @@ export const SearchForm = () => {
         if (search) {
             setMessage('');
             try {
-                const response = await searchByTitle(search);
+                const response = await searchByTitle(search, limit);
                 setPages(response.data.links);
                 setResults(response.data.data);
             } catch (error) {
@@ -24,7 +25,7 @@ export const SearchForm = () => {
 
     return (
         <div className='row justify-content-center'>
-            <form onSubmit={handleForm} className='col-lg-6'>
+            <form onSubmit={handleForm} className='col-lg-4'>
                 <fieldset>
                     <legend className='mb-4'>Search Anime</legend>
                     <div className='form-group'>
@@ -45,6 +46,19 @@ export const SearchForm = () => {
                                 <option>Director</option>
                                 <option>Character</option>
                                 <option>Cast</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div className='form-group'>
+                            <label>Limit (Optional)</label>
+                            <select className='form-control shadow'>
+                                <option value={5}>5</option>
+                                <option default value={10}>
+                                    10
+                                </option>
+                                <option value={25}>25</option>
+                                <option value={50}>50</option>
                             </select>
                         </div>
                     </fieldset>
