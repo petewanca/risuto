@@ -16,6 +16,7 @@ export const SearchForm = () => {
             setMessage('');
             try {
                 const response = await searchByTitle(search, filter, limit);
+                console.log(response);
                 setPages(response.data.links);
                 setResults(response.data.data);
             } catch (error) {
@@ -40,7 +41,7 @@ export const SearchForm = () => {
                     </div>
                     <fieldset>
                         <div className='form-group'>
-                            <label>Search Filter (Optional)</label>
+                            <label>Search Filter</label>
                             <select
                                 className='form-control shadow'
                                 defaultValue={filter}
@@ -48,15 +49,12 @@ export const SearchForm = () => {
                             >
                                 <option value={'text'}>Relevance</option>
                                 <option value={'genres'}>Genre</option>
-                                <option>Director</option>
-                                <option>Character</option>
-                                <option>Cast</option>
                             </select>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div className='form-group'>
-                            <label>Limit (Optional)</label>
+                            <label>Limit</label>
                             <select
                                 className='form-control shadow'
                                 defaultValue={limit}

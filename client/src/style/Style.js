@@ -11,6 +11,6 @@ export const Container = styled.div`
     cursor: pointer;
     width: 200px;
     &:hover {
-        opacity: 0.5;
+        opacity: 0.6;
     }
 `;
