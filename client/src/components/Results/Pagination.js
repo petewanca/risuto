@@ -8,15 +8,9 @@ export const Pagination = () => {
     if (pages) {
         content = (
             <div>
-                <button className='btn btn-outline-success mx-2 border font-weight-bold'>
-                    First Page
-                </button>
-                <button className='btn btn-outline-primary mx-2 border font-weight-bold'>
-                    Next Page
-                </button>
-                <button className='btn btn-outline-success mx-2 border font-weight-bold'>
-                    Last Page
-                </button>
+                <button className='btn btn-outline-primary mx-2 border'>First Page</button>
+                <button className='btn btn-outline-primary mx-2 border'>Next Page</button>
+                <button className='btn btn-outline-primary mx-2 border'>Last Page</button>
             </div>
         );
     }

@@ -5,6 +5,7 @@ import { SearchContext } from '../../context/Contexts/SearchContext';
 export const SearchForm = () => {
     const { setResults, setPages } = useContext(SearchContext);
     const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState('text');
     const [limit, setLimit] = useState(10);
     const [message, setMessage] = useState('');
 
@@ -14,7 +15,7 @@ export const SearchForm = () => {
         if (search) {
             setMessage('');
             try {
-                const response = await searchByTitle(search, limit);
+                const response = await searchByTitle(search, filter, limit);
                 setPages(response.data.links);
                 setResults(response.data.data);
             } catch (error) {
@@ -40,9 +41,13 @@ export const SearchForm = () => {
                     <fieldset>
                         <div className='form-group'>
                             <label>Search Filter (Optional)</label>
-                            <select className='form-control shadow'>
-                                <option>Relevance</option>
-                                <option>Title</option>
+                            <select
+                                className='form-control shadow'
+                                defaultValue={filter}
+                                onChange={(e) => setFilter(e.target.value)}
+                            >
+                                <option value={'text'}>Relevance</option>
+                                <option value={'genres'}>Genre</option>
                                 <option>Director</option>
                                 <option>Character</option>
                                 <option>Cast</option>
@@ -52,13 +57,15 @@ export const SearchForm = () => {
                     <fieldset>
                         <div className='form-group'>
                             <label>Limit (Optional)</label>
-                            <select className='form-control shadow'>
+                            <select
+                                className='form-control shadow'
+                                defaultValue={limit}
+                                onChange={(e) => setLimit(e.target.value)}
+                            >
                                 <option value={5}>5</option>
-                                <option default value={10}>
-                                    10
-                                </option>
-                                <option value={25}>25</option>
-                                <option value={50}>50</option>
+                                <option value={10}>10</option>
+                                <option value={15}>15</option>
+                                <option value={20}>20</option>
                             </select>
                         </div>
                     </fieldset>
