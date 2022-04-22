@@ -5,7 +5,7 @@
 
 <h2>📖 Description</h2>
 <p>Consume a lot of anime content but don't have an easy way to track it? Most online trackers provide a lot of unnecessary tooling and weight when all you need is a simplistic approach to keeping up with what you're watching and what you plan to watch next.</p>
-<p>That's where Risuto comes in - currently in development. V1 to release in May 2020.</p>
+<p>That's where Risuto comes in - a lightweight, easy-to-use anime tracking application.</p>
 
 <h2>💻 Technology</h2>
 <ul>
